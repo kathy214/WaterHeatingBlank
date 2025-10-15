@@ -1,0 +1,21 @@
+{
+  "name": "通用 SDM 模板",
+  "type": "panel-app",
+  "ownerType": "tuya-official",
+  "i18n": false,
+  "miniprogramRoot": "./dist/tuya",
+  "dependencies": {
+    "BaseKit": "3.0.0",
+    "MiniKit": "3.0.0",
+    "DeviceKit": "3.0.0",
+    "BizKit": "3.0.1"
+  },
+  "baseversion": "2.29.4",
+  "devMode": "ray",
+  "compileType": "miniprogram",
+  "projectname": "智能水暖毯",
+  "description": "",
+  "compilerOptions": {
+    "watchMode": "production"
+  }
+}

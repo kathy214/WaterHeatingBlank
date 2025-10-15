@@ -1,0 +1,98 @@
+.label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  .name {
+    font-weight: 500;
+    font-size: 15px;
+    color: #000000;
+  }
+  .line {
+    height: 15px;
+    width: 1px;
+    background-color: #999999;
+    margin: 0 10px;
+  }
+  .num {
+    font-size: 12px;
+    color: #999999;
+  }
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .content {
+    width: 229px;
+    height: 30px;
+    background: #e7e7e7;
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    .raySlider {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 30px;
+      z-index: 9999;
+    }
+    .valueBox {
+      display: flex;
+      .value {
+        background-color: #fe8630;
+        height: 30px;
+        transition: width 0.2;
+      }
+    }
+    .min {
+      position: absolute;
+      left: 12px;
+      height: 30px;
+      top: 0;
+      line-height: 30px;
+      color: #999999;
+    }
+    .minActive {
+      color: #ffffff;
+    }
+    .max {
+      position: absolute;
+      right: 12px;
+      height: 30px;
+      top: 0;
+      line-height: 30px;
+      color: #999999;
+    }
+    .maxActive {
+      color: #ffffff;
+    }
+  }
+  .reduceBtn {
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    background-image: url('@/res/reduce.png');
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .reduceBtnDisabled {
+    background-image: url('@/res/reduce_disabled.png');
+  }
+  .plusBtn {
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    background-image: url('@/res/plus.png');
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .plusBtnDisabled {
+    background-image: url('@/res/plus_disabled.png');
+  }
+}

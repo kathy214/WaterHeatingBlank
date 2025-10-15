@@ -1,0 +1,46 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999999;
+  animation: fadeIn 0.3s ease-out;
+
+  .content {
+    width: 500rpx;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 68rpx 52rpx;
+    background: #ffffff;
+    border-radius: 31rpx;
+    .icon {
+      width: 83rpx;
+      height: 79rpx;
+    }
+    .name {
+      font-weight: 500;
+      font-size: 38rpx;
+      color: #000000;
+      margin-top: 42rpx;
+    }
+    .des {
+      margin-top: 32rpx;
+      font-size: 33rpx;
+      color: #000000;
+    }
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

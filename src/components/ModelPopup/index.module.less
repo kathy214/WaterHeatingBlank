@@ -1,0 +1,71 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999999;
+  animation: fadeIn 0.3s ease-out;
+
+  .content {
+    width: 700rpx;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 42rpx;
+    background: #ffffff;
+    border-radius: 31rpx;
+    .title {
+      font-weight: 500;
+      font-size: 38rpx;
+      color: #000000;
+    }
+    .remind {
+      margin-top: 32rpx;
+      font-size: 33rpx;
+      color: #000000;
+      width: 585rpx;
+    }
+    .btns {
+      margin-top: 42rpx;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      .btn {
+        width: 296rpx;
+        height: 98rpx;
+        border-radius: 88rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .cancel {
+        background-color: #f7f7f7;
+        .text {
+          color: #000000;
+          font-size: 33rpx;
+        }
+      }
+      .confirm {
+        background-color: #fe8630;
+        .text {
+          color: #ffffff;
+          font-size: 33rpx;
+        }
+      }
+    }
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

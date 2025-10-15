@@ -1,0 +1,256 @@
+.container {
+  background: linear-gradient(180deg, #fff2de 0%, rgba(255, 242, 222, 0) 100%);
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+}
+.containerDisabled {
+  background: linear-gradient(180deg, #b3b3b3 0%, rgba(179, 179, 179, 0) 100%);
+}
+
+.gearStatus {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 40rpx;
+  .gearBox {
+    width: 565rpx;
+    height: 565rpx;
+    text-align: center;
+    position: relative;
+    background-image: url('@/res/cover_bg.gif');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .gearShow {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      .gearNum {
+        color: #fe8630;
+        font-size: 125rpx;
+      }
+      .gearUnit {
+        color: #fe8630;
+        font-size: 40rpx;
+        margin-top: 30rpx;
+      }
+    }
+  }
+  .gearBoxDisabled {
+    background-image: url('@/res/cover_bg.png');
+    .gearArea {
+      color: #666666;
+    }
+    .gearShow {
+      .gearNum {
+        color: #000000;
+        margin-left: 10px;
+      }
+      .gearUnit {
+        color: #000000;
+      }
+    }
+  }
+}
+.remainingTimeBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  .timeItem {
+    width: 275rpx;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .timeNum {
+      font-size: 46rpx;
+      color: #000000;
+    }
+    .timeText {
+      color: rgba(0, 0, 0, 0.6);
+      font-size: 25rpx;
+    }
+  }
+  .timeLine {
+    width: 1px;
+    height: 50rpx;
+    background: #000000;
+    opacity: 0.4;
+    margin: 0 30rpx;
+  }
+}
+
+.modelShowBox {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  .modelText {
+    font-size: 33rpx;
+    color: #fe8630;
+    line-height: 58rpx;
+  }
+}
+.modelShowBoxDisabled {
+  opacity: 0;
+}
+.card {
+  width: 700rpx;
+  background: #ffffff;
+  border-radius: 25rpx 25rpx 25rpx 25rpx;
+  margin: 0 auto 25rpx;
+  padding: 42rpx;
+  position: relative;
+  .cardLine {
+    width: 2rpx;
+    height: 83rpx;
+    background: #e5e5e5;
+    border-radius: 0px 0px 0px 0px;
+  }
+}
+.switchBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .switchIcon {
+    width: 83rpx;
+    height: 83rpx;
+  }
+  .switchName {
+    font-weight: 500;
+    margin-left: 20rpx;
+    color: #000000;
+    font-size: 33rpx;
+  }
+}
+
+.gearSet {
+  .gearItem {
+    .gearLabel {
+      display: flex;
+      align-items: center;
+      margin-bottom: 33rpx;
+      .gearName {
+        font-weight: 500;
+        font-size: 29rpx;
+        color: #000000;
+      }
+      .labelLine {
+        height: 29rpx;
+        width: 2rpx;
+        background-color: #999999;
+        margin: 0 20rpx;
+      }
+      .gearNum {
+        font-size: 25rpx;
+        color: #999999;
+      }
+    }
+    .statusControlBox {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .controlStatus {
+        width: 458rpx;
+        height: 62rpx;
+        background: #e7e7e7;
+        border-radius: 48rpx;
+        overflow: hidden;
+        .controlActive {
+          background-color: #fe8630;
+          height: 62rpx;
+        }
+      }
+    }
+  }
+}
+.sceneModelList {
+  display: flex;
+  justify-content: space-between;
+  .sceneModeItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .modelIcon {
+      width: 104rpx;
+      height: 104rpx;
+    }
+    .modelLabel {
+      margin-top: 25rpx;
+      font-size: 27rpx;
+      color: #999999;
+    }
+    .modelLabelActive {
+      color: #fe8630;
+    }
+  }
+}
+.sceneLightList {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .sceneLightItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .modelIcon {
+      width: 83rpx;
+      height: 83rpx;
+    }
+    .modelLabel {
+      margin-top: 25rpx;
+      font-size: 27rpx;
+      color: #999999;
+    }
+    .modelLabelActive {
+      color: #fe8630;
+    }
+  }
+  .modelLine {
+    width: 2rpx;
+    height: 83rpx;
+    background: #e5e5e5;
+  }
+}
+.childLock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .lockIcon {
+    width: 83rpx;
+    height: 83rpx;
+  }
+  .remind {
+    display: flex;
+    flex-direction: column;
+    width: 383rpx;
+    .label {
+      font-weight: 500;
+      font-size: 33rpx;
+      color: #000000;
+      margin-bottom: 10rpx;
+    }
+    .des {
+      font-size: 23rpx;
+      color: #999999;
+    }
+  }
+}
+.lockMask {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: #ffffff;
+  opacity: 0.5;
+  z-index: 99999999;
+}
