@@ -54,7 +54,6 @@ export function Home() {
   ];
 
   const childLock = useProps(props => props.child_lock);
-  const light = useProps(props => props.light);
   const display = useProps(props => props.display);
   const fault = useProps(props => props.fault);
   const model = useProps(props => props.mode);
@@ -143,16 +142,8 @@ export function Home() {
   const handleChangeDisplay = () => {
     if (!switchDp) return;
     const val = !display;
-    console.log('val ---', val, display, light);
+    console.log('val ---', val, display);
     dpActions.display.set(val);
-  };
-
-  // 夜灯设置
-  const handleChangeLight = () => {
-    if (!switchDp) return;
-    const val = !light;
-    console.log('val1 ---', val, display, light);
-    dpActions.light.set(val);
   };
 
   // 童锁设置
@@ -309,58 +300,40 @@ export function Home() {
         </View>
       </View>
       <View className={styles.card}>
-        {childLock && switchDp && <View className={styles.lockMask} />}
         <View className={styles.gearSet}>
           <View className={styles.gearItem}>
             <View className={styles.gearLabel}>
               <Text className={styles.gearName}>{Strings.getLang('lightSet')}</Text>
             </View>
-
             <View className={styles.sceneLightList}>
-              <View className={styles.sceneLightItem} onClick={handleChangeLight}>
-                <Image
-                  className={styles.modelIcon}
-                  src={light && switchDp ? Res.lightActiveIcon : Res.lightIcon}
-                />
-                <Text
-                  className={`${styles.modelLabel} ${
-                    light && switchDp ? styles.modelLabelActive : ''
-                  }`}
-                >
-                  {Strings.getLang('nightLight')}
-                </Text>
+              <View className={styles.sceneLightItem}>
+                {childLock && switchDp && <View className={styles.lockMask} />}
+                <View className={styles.block} onClick={handleChangeDisplay}>
+                  <Image
+                    className={styles.modelIcon}
+                    src={display && switchDp ? Res.screenActiveIcon : Res.screenIcon}
+                  />
+                  <Text
+                    className={`${styles.modelLabel} ${
+                      display && switchDp ? styles.modelLabelActive : ''
+                    }`}
+                  >
+                    {Strings.getLang('offScreen')}
+                  </Text>
+                </View>
               </View>
               <View className={styles.modelLine} />
-              <View className={styles.sceneLightItem} onClick={handleChangeDisplay}>
-                <Image
-                  className={styles.modelIcon}
-                  src={!display && switchDp ? Res.screenActiveIcon : Res.screenIcon}
-                />
-                <Text
-                  className={`${styles.modelLabel} ${
-                    !display && switchDp ? styles.modelLabelActive : ''
-                  }`}
-                >
-                  {Strings.getLang('offScreen')}
-                </Text>
+              <View className={styles.childLock} onClick={handleChangeChildLock}>
+                <View className={styles.childLockItem}>
+                  <Image className={styles.lockIcon} src={switchDp && childLock ? Res.lockActiveIcon : Res.lockIcon} />
+                  <Text className={`${styles.label} ${
+                    childLock && switchDp ? styles.modelLabelActive : ''
+                  }`}>{Strings.getLang('childLock')}</Text>
+                </View>
+                <view className={styles.des}> {Strings.getLang('childLockRemind')} </view>
               </View>
             </View>
           </View>
-        </View>
-      </View>
-      <View className={styles.card}>
-        <View className={styles.childLock}>
-          <Image className={styles.lockIcon} src={switchDp ? Res.lockActiveIcon : Res.lockIcon} />
-          <View className={styles.remind}>
-            <Text className={styles.label}>{Strings.getLang('childLock')}</Text>
-            <Text className={styles.des}> {Strings.getLang('childLockRemind')} </Text>
-          </View>
-          <Switch
-            disabled={!switchDp}
-            checked={childLock && switchDp}
-            color="#FE8630"
-            onChange={handleChangeChildLock}
-          />
         </View>
       </View>
       {showError && <ErrorPopup fault={fault} />}

@@ -197,10 +197,13 @@
   justify-content: space-around;
   align-items: center;
   .sceneLightItem {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    .block{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
     .modelIcon {
       width: 83rpx;
       height: 83rpx;
@@ -221,27 +224,28 @@
   }
 }
 .childLock {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  .lockIcon {
-    width: 83rpx;
-    height: 83rpx;
-  }
-  .remind {
+  text-align: center;
+  .childLockItem{
     display: flex;
-    flex-direction: column;
-    width: 383rpx;
+    align-items: center;
+    justify-content: center;
+    .lockIcon {
+      width: 83rpx;
+      height: 83rpx;
+    }
     .label {
-      font-weight: 500;
-      font-size: 33rpx;
-      color: #000000;
-      margin-bottom: 10rpx;
-    }
-    .des {
-      font-size: 23rpx;
+      font-size: 27rpx;
       color: #999999;
+      margin-left: 30rpx;
     }
+    .modelLabelActive {
+      color: #fe8630;
+    }
+  }
+  .des {
+    font-size: 23rpx;
+    color: #999999;
+    margin-top: 20rpx;
   }
 }
 .lockMask {
