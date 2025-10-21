@@ -334,11 +334,11 @@ export function Home() {
               <View className={styles.sceneLightItem} onClick={handleChangeDisplay}>
                 <Image
                   className={styles.modelIcon}
-                  src={!display && switchDp ? Res.screenActiveIcon : Res.screenIcon}
+                  src={display && switchDp ? Res.screenActiveIcon : Res.screenIcon}
                 />
                 <Text
                   className={`${styles.modelLabel} ${
-                    !display && switchDp ? styles.modelLabelActive : ''
+                    display && switchDp ? styles.modelLabelActive : ''
                   }`}
                 >
                   {Strings.getLang('offScreen')}
